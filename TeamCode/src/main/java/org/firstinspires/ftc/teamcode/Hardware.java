@@ -43,45 +43,15 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 public class Hardware {
     private final ElapsedTime period = new ElapsedTime();
     /* Public OpMode members. */
-    public DcMotor rightFront;
-    public DcMotor leftFront;
-    public DcMotor rightRear;
-    public DcMotor leftRear;
-    public DcMotor arm;
-    //public DcMotor armLeft;
-    public DcMotor feederLeft;
-    public DcMotor feederRight;
-    public DcMotor carousel;
+    // TODO: Create motors! See Example Below:
+    // public DcMotor <motor name>;
 
-    WebcamName webcamName;
 
-    //public DcMotor carouselSpinner;
-//    public DcMotorEx flywheel;
-//    public DcMotor intake;
-//    public Servo gate;
-//    public Servo gate1;
     /* local OpMode members. */
     HardwareMap hwMap = null;
 
     /* Constructor */
     public Hardware() {
-
-    }
-    public static class armPositions {
-        final public static int FEED            = -7;
-        final public static int BOTTOM          = -250;
-        final public static int MIDDLE          = -450;
-        final public static int TOP             = -710;
-        final public static int INVERSETOP      = -2520;
-        final public static int INVERSEMIDDLE   = -2810;
-        final public static int INVERSEBOTTOM   = -2980;
-        final public static int CAPUP           = -2200;
-        final public static int CAPDOWN         = -2450;
-        final public static int INVERSEFEED     = -3350;
-
-        public armPositions() {
-
-        }
 
     }
 
@@ -90,48 +60,65 @@ public class Hardware {
         // Save reference to Hardware map
         hwMap = ahwMap;
 
-        // Define and Initialize Motors
+        // TODO: Define and Initialize Motors! See Example Below:
 
+        /* Mapping Motors!
 
-        //map motors
-        rightFront  = hwMap.get(DcMotor.class, "right front");
-        leftFront   = hwMap.get(DcMotor.class, "left front");
-        rightRear   = hwMap.get(DcMotor.class, "right rear");
-        leftRear    = hwMap.get(DcMotor.class, "left rear");
-        arm = hwMap.get(DcMotor.class, "arm");
-        feederLeft  = hwMap.get(DcMotor.class, "feeder left");
-        feederRight  = hwMap.get(DcMotor.class, "feeder right");
-        carousel = hwMap.get(DcMotor.class, "carousel");
+        * You must map the motors to the name you create
+        * in the control hub configuration file on the
+        * driver station phone!
+        *
+        * EXAMPLE
+        *
+        * MotorName = ahwMap.get(DcMotor.class, "Motor Name");
 
-        //forward or backward settings
-        rightFront  .setDirection(DcMotor.Direction.REVERSE);
-        leftFront   .setDirection(DcMotor.Direction.FORWARD);
-        rightRear   .setDirection(DcMotor.Direction.REVERSE);
-        leftRear    .setDirection(DcMotor.Direction.FORWARD);
-        arm.setDirection(DcMotor.Direction.REVERSE);
-        feederLeft  .setDirection(DcMotor.Direction.FORWARD);
-        feederRight  .setDirection(DcMotor.Direction.REVERSE);
-        carousel.setDirection(DcMotor.Direction.FORWARD);
+        */
 
-        //encoder settings
-        rightFront  .setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        leftFront   .setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rightRear   .setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        leftRear    .setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        arm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        feederLeft  .setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        feederRight .setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        carousel.setMode(DcMotor.RunMode. RUN_WITHOUT_ENCODER);
+        // TODO: Set Motor Direction!
 
-        //brake settings
-        rightFront  .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftFront   .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rightRear   .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftRear    .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        feederRight .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        feederLeft  .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        carousel  .setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        /* Setting Motor Directions!
+        *
+        * You must set the motors to turn a specific direction
+        * so that they turn in the desired direction!
+        *
+        * EXAMPLE
+        *
+        * MotorName.setDirection(DcMotor.Direction.FORWARD);
+        * OR
+        * MotorName.setDirection(DcMotor.Direction.REVERSE);
+        *
+        */
 
+        // TODO: Set Motor Encoder Settings!
+
+        /* Setting Motor Encoder Settings!
+         *
+         * An ENCODER is hardware that keeps track of the amount of
+         * rotations a motor makes. Theoretically it allows your
+         * motors to move in a consistent manner.
+         *
+         * EXAMPLE
+         *
+         * MotorName.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+         * OR
+         * MotorName.setMode(DcMotor.Direction.RUN_WITHOUT_ENCODER);
+         *
+         */
+
+        // TODO: Set Motor Brake Mode!
+
+        /* Setting Motor Brakes!
+         *
+         * Motors have a brake mode that, when they are not supplied power,
+         * would either drift (coast mode) or actively fight to not move
+         * (brake mode)
+         *
+         * EXAMPLE
+         *
+         * MotorName.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+         * OR
+         * MotorName.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.COAST);
+         *
+         */
     }
 }
